@@ -31,7 +31,7 @@
         reg = <0x2a>;
         status = "okay";
         dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "1x";
+        sensitivity = "2x";
         sleep;
         //no-taps;
         y-invert;
@@ -43,20 +43,15 @@
     status = "okay";
     device = <&glidepoint_right>;
 
-    /* Scroll mode (layer 4): XY -> Scroll, Natural direction */
+    /* Layer 4: XY -> Scroll + (más lento) + Natural scroll */
     scroller {
         layers = <4>;
         input-processors = <
-            &zip_xy_scaler
             &zip_xy_to_scroll_mapper
+            &zip_scroll_scaler 1 6
             &zip_scroll_transform(INPUT_TRANSFORM_Y_INVERT)
         >;
     };
-};
-
-&zip_xy_scaler {
-    x-scale = <3>;
-    y-scale = <3>;
 };
 
 &glidepoint_split_listener {
