@@ -6,6 +6,7 @@
 
 #include "lily58cirque.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -42,16 +43,13 @@
     status = "okay";
     device = <&glidepoint_right>;
 
-    /*
-     * Normal (cursor):
-     * - dejamos el procesamiento por defecto (sin forzar nada)
-     *
-     * Scroll mode (como "dos dedos" en Mac):
-     * - cuando esté activo el layer 4, convertimos XY -> scroll
-     */
+    /* Cuando esté activo el layer 4: XY -> Scroll + Natural scrolling */
     scroller {
         layers = <4>;
-        input-processors = <&zip_xy_inverter &zip_xy_to_scroll_mapper>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_transform(INPUT_TRANSFORM_Y_INVERT)
+        >;
     };
 };
 
