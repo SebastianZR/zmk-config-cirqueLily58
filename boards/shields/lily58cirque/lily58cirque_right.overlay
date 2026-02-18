@@ -5,6 +5,7 @@
  */
 
 #include "lily58cirque.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -40,6 +41,18 @@
 &glidepoint_listener {
     status = "okay";
     device = <&glidepoint_right>;
+
+    /*
+     * Normal (cursor):
+     * - dejamos el procesamiento por defecto (sin forzar nada)
+     *
+     * Scroll mode (como "dos dedos" en Mac):
+     * - cuando esté activo el layer 4, convertimos XY -> scroll
+     */
+    scroller {
+        layers = <4>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
 };
 
 &glidepoint_split_listener {
