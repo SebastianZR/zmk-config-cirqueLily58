@@ -62,16 +62,20 @@
         mouse_layer {
             display-name = "Mouse";
 
-            // Activación: mantén LOWER, luego mantén ^ (CARET) -> layer 3
-            // Click izquierdo: F
-            // Click derecho:  J
-            // Click medio:    D
-            // Todo lo demás transparente
+            // Mouse layer:
+            // - F = click izquierdo
+            // - G = click derecho
+            // - R = modo scroll (mantener)
+            // - D = modo scroll (mantener) (reemplaza al click medio)
+            //
+            // Uso:
+            // 1) Mantén la tecla que entra a layer 3 (en tu base: &mo 3)
+            // 2) Para scroll: mantén R o D mientras mueves el Cirque
 
             bindings = <
 &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &pt SCROLL &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &pt SCROLL &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
             >;
