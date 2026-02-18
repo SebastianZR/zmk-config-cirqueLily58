@@ -31,7 +31,7 @@
         reg = <0x2a>;
         status = "okay";
         dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x";
+        sensitivity = "1x";
         sleep;
         //no-taps;
         y-invert;
@@ -43,7 +43,7 @@
     status = "okay";
     device = <&glidepoint_right>;
 
-    /* Cuando esté activo el layer 4: XY -> Scroll + Natural scrolling */
+    /* Scroll mode (layer 4): XY -> Scroll, Natural direction */
     scroller {
         layers = <4>;
         input-processors = <
