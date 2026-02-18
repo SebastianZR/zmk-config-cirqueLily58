@@ -31,7 +31,7 @@
         reg = <0x2a>;
         status = "okay";
         dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x";
+        sensitivity = "1x";
         sleep;
         //no-taps;
         y-invert;
@@ -50,7 +50,7 @@
         layers = <4>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 10
+            &zip_scroll_scaler 1 12
             &zip_scroll_transform(INPUT_TRANSFORM_Y_INVERT)
         >;
     };
