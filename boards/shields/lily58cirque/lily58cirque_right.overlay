@@ -43,7 +43,9 @@
     status = "okay";
     device = <&glidepoint_right>;
 
-    /* Layer 4: XY -> Scroll + (más lento) + Natural scroll */
+    /* BASE: cursor normal (sin processors extra) */
+
+    /* Layer 4: scroll */
     scroller {
         layers = <4>;
         input-processors = <
