@@ -8,8 +8,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
- / {
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -61,11 +62,11 @@
             // R = mantener para entrar a scroll_layer (4) y mover el Cirque para scrollear
 
             bindings = <
-&trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mo 4   &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans
             >;
 
             // Importante: ponemos R como &mo 4 en su POSICIÓN real con el siguiente paso
